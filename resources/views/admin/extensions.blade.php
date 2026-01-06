@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-  Extensions
+  擴充套件
 @endsection
 
 @php
@@ -17,17 +17,17 @@ $is_installed=(($PlaceholderService->installed() != "NOTINSTALLED") && ($Placeho
         </div>
         <div>
           <span class="text-bold" style="color: #ff6ab9;">
-            Blueprint is out-of-date.
+            Blueprint 已過時。
           </span>
-          You're running Blueprint
+          您正在使用 Blueprint
           <code style="border: unset; background-color: unset; color: #cad1d8;">
             {{ $PlaceholderService->version() }}
           </code>
-          which is outdated. Update to version
+          版本已過時。請更新至
           <code style="border: unset; background-color: unset; color: #cad1d8;">
             {{ $latestBlueprintVersion }}
           </code>
-          to access the latest features and improvements.
+          版本以獲取最新功能和改進。
         </div>
       </div>
     @endif
@@ -39,9 +39,9 @@ $is_installed=(($PlaceholderService->installed() != "NOTINSTALLED") && ($Placeho
         </div>
         <div>
           <span class="text-bold" style="color: #f9a040;">
-          Could not fetch version info.
+          無法取得版本資訊。
           </span>
-          Blueprint failed to fetch the latest release name from the API.
+          Blueprint 無法從 API 取得最新版本名稱。
         </div>
       </div>
     @endif
@@ -53,12 +53,12 @@ $is_installed=(($PlaceholderService->installed() != "NOTINSTALLED") && ($Placeho
             <span class="text-bold h4">Blueprint</span>
           </p>
           <span>
-            Powerful, fast and developer-friendly extension framework for Pterodactyl. Utilize extension APIs, inject HTML, modify stylesheets, package extensions and so much more.
+            為 Pterodactyl 打造的強大、快速且對開發者友善的擴充框架。可使用擴充 API、注入 HTML、修改樣式表、打包擴充套件等更多功能。
           </span>
         </div>
         <div class="col-lg-4 col-md-3 col-sm-3 col-xs-12" style="padding-top: 3px; padding-bottom: 3px;">
           <a href="https://blueprint.zip/" target="_blank" class="pull-right text-bold">
-            Learn more
+            了解更多
           </a>
         </div>
       </div>
@@ -120,7 +120,7 @@ $is_installed=(($PlaceholderService->installed() != "NOTINSTALLED") && ($Placeho
           <p class="extension-btn-version">
             <span style="padding-right:5px">
               <i class="bi bi-gear-fill"></i>
-              <b>system</b>
+              <b>系統</b>
             </span>
             {{ $PlaceholderService->version() }}
           </p>
@@ -177,10 +177,10 @@ $is_installed=(($PlaceholderService->installed() != "NOTINSTALLED") && ($Placeho
         <div class="modal-content" style="background-color:transparent">
           <form action="/admin/extensions/blueprint" method="POST" autocomplete="off">
             <div class="modal-header" style="border-color:transparent; border-radius:7px; margin-bottom: 15px">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:#fff;box-shadow:none"><span aria-hidden="true"><i class="bi bi-x"></i></span></button>
+              <button type="button" class="close" data-dismiss="modal" aria-label="關閉" style="color:#fff;box-shadow:none"><span aria-hidden="true"><i class="bi bi-x"></i></span></button>
               <h3 class="modal-title">
                 <img src="/assets/extensions/blueprint/logo.jpg" alt="logo" height="34" width="34" class="pull-left" style="border-radius:3px;margin-right:10px"/>
-                Configure <b>Blueprint</b>
+                設定 <b>Blueprint</b>
               </h3>
             </div>
 
@@ -188,8 +188,8 @@ $is_installed=(($PlaceholderService->installed() != "NOTINSTALLED") && ($Placeho
               <table class="table table-hover">
                 <thead>
                   <tr>
-                    <th style="width:50%">Flag</th>
-                    <th>Value</th>
+                    <th style="width:50%">旗標</th>
+                    <th>數值</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -241,10 +241,10 @@ $is_installed=(($PlaceholderService->installed() != "NOTINSTALLED") && ($Placeho
               <input type="hidden" name="_method" value="PATCH">
               <div class="row">
                 <div class="col-sm-10">
-                  <p class="text-muted small text-left">Flags enable certain features that may be experimental, unstable, or in development. Modifying these values can affect Blueprint's functionality, stability, and security.</p>
+                  <p class="text-muted small text-left">旗標可啟用某些實驗性、不穩定或開發中的功能。修改這些數值可能會影響 Blueprint 的功能、穩定性和安全性。</p>
                 </div>
                 <div class="col-sm-2">
-                  <button type="submit" class="btn btn-primary btn-sm" style="width:100%; margin-top:10px; margin-bottom:10px; border-radius:6px">Save</button>
+                  <button type="submit" class="btn btn-primary btn-sm" style="width:100%; margin-top:10px; margin-bottom:10px; border-radius:6px">儲存</button>
                 </div>
               </div>
             </div>
@@ -262,18 +262,18 @@ $is_installed=(($PlaceholderService->installed() != "NOTINSTALLED") && ($Placeho
         </span>
         <br style="margin-bottom: 12px;">
         <span style="font-size: 20px" class="text-bold">
-          Unfinished installation
+          安裝未完成
         </span>
         <br style="margin-bottom: 12px;">
         <span>
-          Blueprint is currently only partially installed.<br>
-          Finish the
-          <a href="https://blueprint.zip/guides/admin/install">installation guide</a>,
-          then return to this page afterwards.
+          Blueprint 目前僅部分安裝。<br>
+          完成
+          <a href="https://blueprint.zip/guides/admin/install">安裝指南</a>，
+          然後再返回此頁面。
         </span>
         <br style="margin-bottom: 12px;">
         <span>
-          You may be able to fix this issue by running <code>blueprint -upgrade</code>.
+          您可以嘗試執行 <code>blueprint -upgrade</code> 來修復此問題。
         </span>
       </div>
     </center>
