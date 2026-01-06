@@ -188,7 +188,7 @@ $is_installed=(($PlaceholderService->installed() != "NOTINSTALLED") && ($Placeho
               <table class="table table-hover">
                 <thead>
                   <tr>
-                    <th style="width:50%">旗標</th>
+                    <th style="width:50%">Flag</th>
                     <th>數值</th>
                   </tr>
                 </thead>
@@ -241,7 +241,7 @@ $is_installed=(($PlaceholderService->installed() != "NOTINSTALLED") && ($Placeho
               <input type="hidden" name="_method" value="PATCH">
               <div class="row">
                 <div class="col-sm-10">
-                  <p class="text-muted small text-left">旗標可啟用某些實驗性、不穩定或開發中的功能。修改這些數值可能會影響 Blueprint 的功能、穩定性和安全性。</p>
+                  <p class="text-muted small text-left">Flags 可啟用某些實驗性、不穩定或開發中的功能。修改這些數值可能會影響 Blueprint 的功能、穩定性和安全性。</p>
                 </div>
                 <div class="col-sm-2">
                   <button type="submit" class="btn btn-primary btn-sm" style="width:100%; margin-top:10px; margin-bottom:10px; border-radius:6px">儲存</button>
