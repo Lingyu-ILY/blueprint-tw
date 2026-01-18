@@ -30,46 +30,46 @@
       <div class="modal-content" style="background-color:transparent">
         <form action="/admin/extensions/blueprint/config" method="POST" autocomplete="off">
           <div class="modal-header" style="border-color:transparent; border-radius:7px; margin-bottom: 15px">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color:#fff;box-shadow:none"><span aria-hidden="true"><i class="bi bi-x"></i></span></button>
+            <button type="button" class="close" data-dismiss="modal" aria-label="關閉" style="color:#fff;box-shadow:none"><span aria-hidden="true"><i class="bi bi-x"></i></span></button>
             <h3 class="modal-title">
               <img src="{{ $EXTENSION_ICON }}" alt="logo" height="34" width="34" class="pull-left" style="border-radius:3px;margin-right:10px"/>
-              Configure <b>{{ $EXTENSION_NAME }}</b>
+              設定 <b>{{ $EXTENSION_NAME }}</b>
             </h3>
           </div>
 
           <div class="modal-body" style="border-color:transparent; border-radius:7px; margin-bottom: 15px">
-            <h4><b>Permissions</b></h4>
-            <p class="text-muted text-left">Configure what elements this extension can or can't edit/extend on your Pterodactyl panel.</p><br>
+            <h4><b>權限</b></h4>
+            <p class="text-muted text-left">設定此擴充套件可以或不可以在您的 Pterodactyl 面板上編輯/擴充哪些元素。</p><br>
 
             <div class="row">
               <div class="col-xs-6">
-                <label class="control-label">Admin layouts</label>
+                <label class="control-label">管理員版面配置</label>
                 <select class="form-control" name="{{ $EXTENSION_ID }}_adminlayouts" style="border-radius:6px">
-                  <option value="1" @if($blueprint->dbGet('blueprint', 'extensionconfig_'.$EXTENSION_ID.'_adminlayouts') != "0") selected @endif>Allowed</option>
-                  <option value="0" @if($blueprint->dbGet('blueprint', 'extensionconfig_'.$EXTENSION_ID.'_adminlayouts') == "0") selected @endif>Blocked</option>
+                  <option value="1" @if($blueprint->dbGet('blueprint', 'extensionconfig_'.$EXTENSION_ID.'_adminlayouts') != "0") selected @endif>允許</option>
+                  <option value="0" @if($blueprint->dbGet('blueprint', 'extensionconfig_'.$EXTENSION_ID.'_adminlayouts') == "0") selected @endif>封鎖</option>
                 </select>
-                <p class="text-muted small">Allow this extension to extend the admin panel layouts.</p>
+                <p class="text-muted small">允許此擴充套件擴充管理面板版面配置。</p>
               </div>
               <div class="col-xs-6">
-                <label class="control-label">Dashboard wrapper</label>
+                <label class="control-label">儀表板包裝器</label>
                 <select class="form-control" name="{{ $EXTENSION_ID }}_dashboardwrapper" style="border-radius:6px">
-                  <option value="1" @if($blueprint->dbGet('blueprint', 'extensionconfig_'.$EXTENSION_ID.'_dashboardwrapper') != "0") selected @endif>Allowed</option>
-                  <option value="0" @if($blueprint->dbGet('blueprint', 'extensionconfig_'.$EXTENSION_ID.'_dashboardwrapper') == "0") selected @endif>Blocked</option>
+                  <option value="1" @if($blueprint->dbGet('blueprint', 'extensionconfig_'.$EXTENSION_ID.'_dashboardwrapper') != "0") selected @endif>允許</option>
+                  <option value="0" @if($blueprint->dbGet('blueprint', 'extensionconfig_'.$EXTENSION_ID.'_dashboardwrapper') == "0") selected @endif>封鎖</option>
                 </select>
-                <p class="text-muted small">Allow this extension to extend the dashboard's blade wrapper.</p>
+                <p class="text-muted small">允許此擴充套件擴充儀表板的 blade 包裝器。</p>
               </div>
             </div>
 
             <div class="row">
               <div class="col-xs-12">
-                <label class="control-label">Route eggs</label>
+                <label class="control-label">路由 Eggs</label>
                 <select multiple class="eggOptions form-control" name="{{ $EXTENSION_ID }}_eggs[]">
-                  <option value="-1" @if(in_array('-1', json_decode($blueprint->dbGet('blueprint', 'extensionconfig_'.$EXTENSION_ID.'_eggs') ?: '["-1"]'))) selected @endif>Show on all eggs</option>
+                  <option value="-1" @if(in_array('-1', json_decode($blueprint->dbGet('blueprint', 'extensionconfig_'.$EXTENSION_ID.'_eggs') ?: '["-1"]'))) selected @endif>在所有 eggs 上顯示</option>
                   @foreach ($eggs as $egg)
                     <option value="{{ $egg->id }}" @if(in_array(strval($egg->id), json_decode($blueprint->dbGet('blueprint', 'extensionconfig_'.$EXTENSION_ID.'_eggs') ?: '["-1"]'))) selected @endif>{{ $egg->name }}</option>
                   @endforeach
                 </select>
-                <p class="text-muted small">Choose on which Pterodactyl eggs this extension should be able to add new pages on.</p>
+                <p class="text-muted small">選擇此擴充套件應該可以在哪些 Pterodactyl eggs 上新增頁面。</p>
               </div>
             </div>
           </div>
@@ -80,10 +80,10 @@
             <input type="hidden" name="_method" value="PATCH">
             <div class="row">
               <div class="col-sm-10">
-                <p class="text-muted small text-left">This settings dialog was automatically generated by Blueprint. Unsaved changes will be lost when updating this extension's configuration.</p>
+                <p class="text-muted small text-left">此設定對話框由 Blueprint 自動產生。更新此擴充套件的設定時，未儲存的變更將會遺失。</p>
               </div>
               <div class="col-sm-2">
-                <button type="submit" class="btn btn-primary btn-sm" style="width:100%; margin-top:10px; margin-bottom:10px; border-radius:6px">Save</button>
+                <button type="submit" class="btn btn-primary btn-sm" style="width:100%; margin-top:10px; margin-bottom:10px; border-radius:6px">儲存</button>
               </div>
             </div>
           </div>

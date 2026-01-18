@@ -44,11 +44,11 @@ export default ({ className }: PowerButtonProps) => {
                 open={open}
                 hideCloseIcon
                 onClose={() => setOpen(false)}
-                title={'Forcibly Stop Process'}
-                confirm={'Continue'}
+                title={'強制停止程序'}
+                confirm={'繼續'}
                 onConfirmed={onButtonClick.bind(this, 'kill-confirmed')}
             >
-                Forcibly stopping a server can lead to data corruption.
+                強制停止伺服器可能導致資料損壞。
             </Dialog.Confirm>
             <AdditionalPowerButtons />
             <Can action={'control.start'}>

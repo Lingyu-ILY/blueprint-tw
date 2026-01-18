@@ -52,12 +52,12 @@ export default () => {
     }, [error]);
 
     return (
-        <PageContentBlock title={'Dashboard'} showFlashKey={'dashboard'}>
+        <PageContentBlock title={'儀表板'} showFlashKey={'dashboard'}>
             <BeforeContent />
             {rootAdmin && (
                 <div css={tw`mb-2 flex justify-end items-center`}>
                     <p css={tw`uppercase text-xs text-neutral-400 mr-2`}>
-                        {showOnlyAdmin ? "Showing others' servers" : 'Showing your servers'}
+                        {showOnlyAdmin ? '顯示其他人的伺服器' : '顯示您的伺服器'}
                     </p>
                     <Switch
                         name={'show_all_servers'}
@@ -78,8 +78,8 @@ export default () => {
                         ) : (
                             <p css={tw`text-center text-sm text-neutral-400`}>
                                 {showOnlyAdmin
-                                    ? 'There are no other servers to display.'
-                                    : 'There are no servers associated with your account.'}
+                                    ? '沒有其他伺服器可顯示。'
+                                    : '您的帳戶沒有關聯的伺服器。'}
                             </p>
                         )
                     }

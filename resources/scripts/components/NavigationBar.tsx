@@ -66,27 +66,27 @@ export default () => {
                 </div>
                 <RightNavigation className={'flex h-full items-center justify-center'}>
                     <SearchContainer />
-                    <Tooltip placement={'bottom'} content={'Dashboard'}>
+                    <Tooltip placement={'bottom'} content={'儀表板'}>
                         <NavLink to={'/'} exact id={'NavigationDashboard'}>
                             <FontAwesomeIcon icon={faLayerGroup} />
                         </NavLink>
                     </Tooltip>
                     {rootAdmin && (
-                        <Tooltip placement={'bottom'} content={'Admin'}>
+                        <Tooltip placement={'bottom'} content={'管理員'}>
                             <a href={'/admin'} rel={'noreferrer'} id={'NavigationAdmin'}>
                                 <FontAwesomeIcon icon={faCogs} />
                             </a>
                         </Tooltip>
                     )}
                     <AdditionalItems />
-                    <Tooltip placement={'bottom'} content={'Account Settings'}>
+                    <Tooltip placement={'bottom'} content={'帳戶設定'}>
                         <NavLink to={'/account'} id={'NavigationAccount'}>
                             <span className={'flex items-center w-5 h-5'}>
                                 <Avatar.User />
                             </span>
                         </NavLink>
                     </Tooltip>
-                    <Tooltip placement={'bottom'} content={'Sign Out'}>
+                    <Tooltip placement={'bottom'} content={'登出'}>
                         <button onClick={onTriggerLogout} id={'NavigationLogout'}>
                             <FontAwesomeIcon icon={faSignOutAlt} />
                         </button>

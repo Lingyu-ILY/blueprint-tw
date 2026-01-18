@@ -18,7 +18,7 @@
 @section("blueprint.navigation")
   <li>
     <li>
-      <a href="{{ route('admin.extensions') }}" data-toggle="tooltip" data-placement="bottom" title="Extensions">
+      <a href="{{ route('admin.extensions') }}" data-toggle="tooltip" data-placement="bottom" title="擴充套件">
         <i class='fa fa-puzzle-piece'></i>
       </a>
     </li>
@@ -29,7 +29,7 @@
   @if($blueprint->dbGet("blueprint", "flags:show_in_sidebar"))
     <li class="{{ ! starts_with(Route::currentRouteName(), 'admin.extensions') ?: 'active' }}">
       <a href="{{ route('admin.extensions') }}">
-        <i class="fa fa-puzzle-piece"></i> <span>Extensions</span>
+        <i class="fa fa-puzzle-piece"></i> <span>擴充套件</span>
       </a>
     </li>
   @endif
